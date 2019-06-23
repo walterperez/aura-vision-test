@@ -1,0 +1,17 @@
+@import './../../style/parameters';
+.DataDisplay {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: auto;
+  padding: 3em;
+  color: $color1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    color: $color3;
+    margin-bottom: 1em;
+  }
+}

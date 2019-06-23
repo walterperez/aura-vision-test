@@ -1,0 +1,36 @@
+@import './../../style/parameters';
+.Flight {
+  width: 100%;
+  background-color: $color4;
+  padding: 1em;
+  background-color: white;
+  max-width: 500px;
+  margin-bottom: 1em;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s linear;
+  margin: 1em auto;
+  &:hover {
+    transform: scale(1.1);
+  }
+  .Flight_from-to {
+    display: flex;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.15em;
+    color: $color3;
+    margin-bottom: 1em;
+
+    .Flight_from-to__origin {
+      flex: 1;
+    }
+    .Flight_from-to__arrow {
+      flex: 1;
+    }
+    .Flight_from-to__destination {
+      flex: 1;
+    }
+  }
+  .Flight__departure {
+    color: $color3;
+  }
+}

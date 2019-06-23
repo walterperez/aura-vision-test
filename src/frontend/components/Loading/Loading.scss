@@ -4,15 +4,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.loader {
-  width: 40px;
-  height: 40px;
-  border: 15px solid grey;
-  border-top: 15px solid rgba(209, 209, 5, 1);
-  border-radius: 50%;
-  animation: spin 2s linear infinite;
+  .loader {
+    width: 40px;
+    height: 40px;
+    border: 15px solid grey;
+    border-top: 15px solid rgba(209, 209, 5, 1);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+  }
 }
 
 @keyframes spin {

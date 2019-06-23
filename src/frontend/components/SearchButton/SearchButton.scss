@@ -1,0 +1,18 @@
+@import './../../style/parameters';
+
+.SearchButton {
+  padding: 1em 3em;
+  margin: 2em auto;
+  font-size: 1em;
+  border: 0;
+  background-color: $color5;
+  text-transform: uppercase;
+  display: block;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background-color: rgb(251, 255, 0);
+    cursor: pointer;
+    box-shadow: 0 5px 10px 1px rgba(231, 197, 2, 0.356);
+  }
+}

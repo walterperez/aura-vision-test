@@ -1,6 +1,6 @@
 import React from 'react';
 import { DataDisplay } from '../DataDisplay/DataDisplay';
-import './App.css';
+import './App.scss';
 
 const App: React.FC = () => {
   return (

@@ -3,19 +3,9 @@ import { fakeData, flight } from './fakeData';
 import { Flight } from './../Flight/Flight';
 import { Loading } from '../Loading/Loading';
 import DatePicker from 'react-datepicker';
+import { SearchButton } from './../SearchButton/SearchButton';
 import 'react-datepicker/dist/react-datepicker.css';
-
-interface ISearchButtonProps {
-  handleClick: (event?: React.MouseEvent) => void;
-}
-
-function SearchButton(props: ISearchButtonProps) {
-  return (
-    <div className="SearchButton" onClick={() => props.handleClick()}>
-      Search =>
-    </div>
-  );
-}
+import './DataDisplay.scss';
 
 interface stateInterface {
   startDate: Date;
@@ -67,9 +57,9 @@ export class DataDisplay extends Component<propsInterface, stateInterface> {
     const { flights, loading, startDate } = this.state;
     return (
       <div className="DataDisplay">
-        <h1>Hi im data displayer</h1>
         {!loading &&
           !flights.length && [
+            <h1>When would you like to fly?</h1>,
             <DatePicker selected={startDate} onChange={this.changeDate} />,
             <SearchButton handleClick={this.searchClick} />
           ]}

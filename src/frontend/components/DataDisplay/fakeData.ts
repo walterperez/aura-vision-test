@@ -31,6 +31,6 @@ export function fakeData(): Promise<data> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(data);
-    }, 100);
+    }, 500);
   });
 }
