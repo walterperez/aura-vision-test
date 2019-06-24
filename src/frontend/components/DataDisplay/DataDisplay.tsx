@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fakeData, flight } from './fakeData';
+import { fakeData, flight, getFlights } from './fakeData';
 import { Flight } from './../Flight/Flight';
 import { Loading } from '../Loading/Loading';
 import DatePicker from 'react-datepicker';
@@ -11,6 +11,7 @@ interface stateInterface {
   startDate: Date;
   flights: flight[];
   loading: boolean;
+  message: string;
 }
 interface propsInterface {}
 
@@ -20,7 +21,8 @@ export class DataDisplay extends Component<propsInterface, stateInterface> {
     this.state = {
       startDate: new Date(),
       flights: [],
-      loading: false
+      loading: false,
+      message: ''
     };
     this.changeDate = this.changeDate.bind(this);
     this.searchClick = this.searchClick.bind(this);
@@ -28,13 +30,23 @@ export class DataDisplay extends Component<propsInterface, stateInterface> {
 
   async searchClick() {
     this.setState({
-      loading: true
+      loading: true,
+      message: ''
     });
-    const data = await fakeData();
-    this.setState({
-      loading: false,
-      flights: data.flights
-    });
+    const data = await getFlights(this.state.startDate);
+    if (typeof data === 'string') {
+      this.setState({
+        loading: false,
+        message: data
+      });
+    } else {
+      //@ts-ignore
+      this.setState({
+        loading: false,
+        //@ts-ignore
+        flights: data
+      });
+    }
   }
 
   changeDate(date: Date) {
@@ -54,9 +66,10 @@ export class DataDisplay extends Component<propsInterface, stateInterface> {
   componentDidMount() {}
 
   render() {
-    const { flights, loading, startDate } = this.state;
+    const { flights, loading, startDate, message } = this.state;
     return (
       <div className="DataDisplay">
+        {message && <h2 className="DataDisplay__Message">{message}</h2>}
         {!loading &&
           !flights.length && [
             <h1>When would you like to fly?</h1>,

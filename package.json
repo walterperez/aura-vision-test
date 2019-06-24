@@ -3,14 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/express": "^4.17.0",
-    "@types/jest": "24.0.15",
-    "@types/node": "12.0.8",
-    "@types/prop-types": "^15.7.1",
-    "@types/react": "16.8.22",
-    "@types/react-datepicker": "^2.3.0",
-    "@types/react-dom": "16.8.4",
-    "express": "^4.17.1",
+    "express": "^4.16.4",
+    "node-fetch": "^2.6.0",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-datepicker": "2.7.0",
@@ -20,8 +14,8 @@
   },
   "scripts": {
     "start-frontend": "react-scripts start",
-    "start-backend": "nodemon ./src/backend/index.ts",
-    "dev": "npm-run-all \"start-frontend\" \"start-backend\"",
+    "start-backend": "nodemon ./src/backend/index.js",
+    "dev": "npm-run-all -p \"start-frontend\" \"start-backend\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -43,9 +37,18 @@
   },
   "proxy": "http://localhost:4000",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/express": "^4.16.1",
+    "@types/jest": "24.0.15",
+    "@types/node": "^10.14.6",
+    "@types/prop-types": "^15.7.1",
+    "@types/react": "16.8.22",
+    "@types/react-datepicker": "^2.3.0",
+    "@types/react-dom": "16.8.4",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "nodemon": "^1.19.1",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^8.3.0"
   }
 }
