@@ -1,3 +1,17 @@
+### This is a test for Aura Vision.
+
+### HOW TO USE IT:
+
+1 ) git clone https://github.com/walterperez/aura-vision-test
+
+2 ) cd .\aura-vision-test\
+
+3 ) npm install
+
+4 ) npm run dev => Run Development Enviroment
+
+### Create React App official description
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
