@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fakeData, flight, getFlights } from './fakeData';
+import { ResetButton } from './../ResetButton/ResetButton';
 import { Flight } from './../Flight/Flight';
 import { Loading } from '../Loading/Loading';
 import DatePicker from 'react-datepicker';
@@ -26,6 +27,16 @@ export class DataDisplay extends Component<propsInterface, stateInterface> {
     };
     this.changeDate = this.changeDate.bind(this);
     this.searchClick = this.searchClick.bind(this);
+    this.resetState = this.resetState.bind(this);
+  }
+
+  resetState() {
+    this.setState({
+      startDate: new Date(),
+      flights: [],
+      loading: false,
+      message: ''
+    });
   }
 
   async searchClick() {
@@ -69,6 +80,7 @@ export class DataDisplay extends Component<propsInterface, stateInterface> {
     const { flights, loading, startDate, message } = this.state;
     return (
       <div className="DataDisplay">
+        {flights.length && <ResetButton resetState={this.resetState} />}
         {message && <h2 className="DataDisplay__Message">{message}</h2>}
         {!loading &&
           !flights.length && [
