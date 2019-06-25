@@ -7,7 +7,11 @@ interface ISearchButtonProps {
 
 export function SearchButton(props: ISearchButtonProps) {
   return (
-    <button className="SearchButton" onClick={() => props.handleClick()}>
+    <button
+      className="SearchButton"
+      onClick={() => props.handleClick()}
+      data-test="SearchButton"
+    >
       Search &#x279C;
     </button>
   );

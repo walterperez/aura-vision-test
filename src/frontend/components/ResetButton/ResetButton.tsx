@@ -7,7 +7,7 @@ interface ResetButtonProps {
 
 export function ResetButton(props: ResetButtonProps) {
   return (
-    <div className="ResetButton">
+    <div className="ResetButton" data-test="ResetButton">
       <div className="ResetButton__Icon" onClick={() => props.resetState()}>
         &#x21A9;
       </div>

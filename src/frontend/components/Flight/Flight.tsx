@@ -7,7 +7,7 @@ export function Flight(props: flight) {
   const { origin, destination, departure } = props;
 
   return (
-    <div className="Flight" key={`${origin}${destination}${departure}`}>
+    <div className="Flight" key={`${origin}${destination}${departure}`} data-test="Flight">
       <div className="Flight_from-to">
         <p className="Flight_from-to__origin">{origin}</p>
         <p className="Flight_from-arrow">&#x279C;</p>

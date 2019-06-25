@@ -85,8 +85,15 @@ export class DataDisplay extends Component<propsInterface, stateInterface> {
         {!loading &&
           !flights.length && [
             <h1>When would you like to fly?</h1>,
-            <DatePicker selected={startDate} onChange={this.changeDate} />,
-            <SearchButton handleClick={this.searchClick} />
+            <DatePicker
+              selected={startDate}
+              onChange={this.changeDate}
+              data-test="datePicker"
+            />,
+            <SearchButton
+              handleClick={this.searchClick}
+              data-test="SearchButton"
+            />
           ]}
         {loading && <Loading />}
         {flights.length &&
