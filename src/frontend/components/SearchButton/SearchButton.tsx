@@ -12,7 +12,7 @@ export function SearchButton(props: ISearchButtonProps) {
       onClick={() => props.handleClick()}
       data-test="SearchButton"
     >
-      Search &#x279C;
+      Search &#x1F6EA;
     </button>
   );
 }
