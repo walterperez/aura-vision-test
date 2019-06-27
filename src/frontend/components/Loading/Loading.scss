@@ -1,3 +1,4 @@
+@import './../../style/parameters.scss';
 .Loading {
   width: 100vw;
   height: 100vh;
@@ -12,7 +13,7 @@
     width: 40px;
     height: 40px;
     border: 15px solid grey;
-    border-top: 15px solid rgba(209, 209, 5, 1);
+    border-top: 15px solid $color6;
     border-radius: 50%;
     animation: spin 2s linear infinite;
   }
