@@ -45,7 +45,12 @@ export class DataDisplay extends Component<propsInterface, stateInterface> {
       message: ''
     });
     const data = await getFlights(this.state.startDate);
-    if (typeof data === 'string') {
+    if (!data) {
+      this.setState({
+        loading: false,
+        message: "Sorry, looks like you don't have connection :'("
+      });
+    } else if (typeof data === 'string') {
       this.setState({
         loading: false,
         message: data
@@ -84,13 +89,15 @@ export class DataDisplay extends Component<propsInterface, stateInterface> {
         {message && <h2 className="DataDisplay__Message">{message}</h2>}
         {!loading &&
           !flights.length && [
-            <h1>When would you like to fly?</h1>,
+            <h1 key="title">When would you like to fly?</h1>,
             <DatePicker
+              key="DatePicker"
               selected={startDate}
               onChange={this.changeDate}
               data-test="datePicker"
             />,
             <SearchButton
+              key="SearchButton"
               handleClick={this.searchClick}
               data-test="SearchButton"
             />

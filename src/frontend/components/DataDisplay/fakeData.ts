@@ -38,19 +38,23 @@ export function fakeData(): Promise<data> {
 export function getFlights(date: Date) {
   return new Promise((resolve, reject) => {
     let data = { data: date.toString() };
-    fetch('/rest/flights', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(response => response.json())
-      .then(data => {
-        resolve(data);
+    try {
+      fetch('/rest/flights', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
       })
-      .catch(err => {
-        reject(err);
-      });
+        .then(response => response.json())
+        .then(data => {
+          resolve(data);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    } catch(error) {
+      reject(error)
+    }  
   });
 }
